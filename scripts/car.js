@@ -13,8 +13,8 @@ const userCar = {
     'Blue'
   ],
   currentColor: availableColors[4],
-  engine: '2.0',
-  transmission: 'Powershift 6 marchas + ré',
+  // engine: 1234,
+  // transmission: 1234,
   // imagePath: 1234,
   // dimensions: 1234,
   // safety: 1234,
