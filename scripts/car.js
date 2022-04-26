@@ -13,10 +13,10 @@ const userCar = {
     'Blue'
   ],
   currentColor: 'Grey',
-  engine: ,
-  transmission: ,
-  imagePath: ,
-  dimensions: ,
-  safety: ,
-  performance: ,
+  engine:{},
+  transmission:{},
+  imagePath:{},
+  dimensions:{},
+  safety:{},
+  performance:{},
 };
