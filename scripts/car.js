@@ -12,11 +12,11 @@ const userCar = {
     'Grey', 
     'Blue'
   ],
-  currentColor: availableColors[4],
-  // engine: 1234,
-  // transmission: 1234,
-  // imagePath: 1234,
-  // dimensions: 1234,
-  // safety: 1234,
-  // performance: 1234,
+  currentColor: 'Grey',
+  engine:{},
+  transmission:{},
+  imagePath:{},
+  dimensions:{},
+  safety:{},
+  performance:{},
 };
