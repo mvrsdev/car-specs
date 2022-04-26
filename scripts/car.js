@@ -12,7 +12,7 @@ const userCar = {
     'Grey', 
     'Blue'
   ],
-  currentColor: availableColors[4],
+  currentColor: 'Grey',
   // engine: 1234,
   // transmission: 1234,
   // imagePath: 1234,
