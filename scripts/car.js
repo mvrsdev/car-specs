@@ -139,9 +139,9 @@ const onix = {
 
 function getComercialCarName(car) {
   const cylinderTotalCapacity = car.engine.cylinderTotalCapacity/1000;
-  return `${car.brand} ${car.model} ${car.version} ${car.year} ${cylinderTotalCapacity.toFixed(1)}`;
+  return `${car.brand} ${car.model} ${car.version} ${
+    car.year} ${cylinderTotalCapacity.toFixed(1)}`;
 }
 
 const carName = getComercialCarName(fordFocus);
 
-console.log (carName)
