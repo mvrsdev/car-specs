@@ -16,7 +16,19 @@ const userCar = {
     cylinderTotalCapacity: 1999, // Total cylinder capacity (in cm3)
     aspirationType: 'Natural', // Natural, Turbocharged, Supercharged
   },
-  transmission: {},
+  transmission: {
+    type: 'AT', // AT = Automatic Transmission | MT = Manual Transmission
+    cvt: false, // Continuously Variable Transmission or not
+    gears: {
+      first: 3.917,
+      second: 2.429,
+      third: 1.436,
+      fourth: 1.021,
+      fifth: 0.867,
+      sixth: 0.702,
+      reverse: 3.507,
+    }, // List of gears and it's torque transmition ratio
+  },
   imagePath: 'Image TBD',
   dimensions: {
     weight: 1375, // In Kilograms
