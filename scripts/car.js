@@ -7,7 +7,16 @@ const userCar = {
   availableColors: ['Green', 'Red', 'Silver', 'Black', 'Grey', 'Blue'],
   currentColor: 'Grey',
   engine: {},
-  transmission: {},
+  transmission: {
+    maxPower: 178, // In CV 
+    maxPowerAtRpm: 6500, // Maximum power target RPM
+    maxTorque: 22.5, // Kgfm
+    maxToqueAtRpm: 4500, // Maximum torque target RPM
+    cylinderCount: 4, // Total number of cylinders of the engine
+    cylinderValveCount: 2, // Number of valves to each cylinder
+    cylinderTotalCapacity: 1999, // Total cylinder capacity (in cm3)
+    aspirationType: 'Natural', // Natural, Turbocharged, Supercharged
+  },
   imagePath: 'Image TBD',
   dimensions: {
     weight: 1375, // In Kilograms
