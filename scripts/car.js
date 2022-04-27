@@ -46,5 +46,20 @@ const userCar = {
     aeb: false, // Autonomous Emergency Braking
     esp: true, // Electronic Stability Program
   },
-  performance: {},
+  performance: {
+    maxSpeed: 206, // In kilometers
+    accelTo100: 9.2, // In seconds
+    averageFuelConsumption: [
+      {
+        urban: {
+          alcohol: 7.5, 
+          gas: 8.5,
+        }, 
+        highway: {
+          alcohol: 9,
+          gas: 16,
+        },
+      }
+    ], // km/l
+  },
 };
