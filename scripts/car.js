@@ -6,8 +6,7 @@ const userCar = {
   bodyType: 'Hatchback',
   availableColors: ['Green', 'Red', 'Silver', 'Black', 'Grey', 'Blue'],
   currentColor: 'Grey',
-  engine: {},
-  transmission: {
+  engine: {
     maxPower: 178, // In CV 
     maxPowerAtRpm: 6500, // Maximum power target RPM
     maxTorque: 22.5, // Kgfm
@@ -17,6 +16,7 @@ const userCar = {
     cylinderTotalCapacity: 1999, // Total cylinder capacity (in cm3)
     aspirationType: 'Natural', // Natural, Turbocharged, Supercharged
   },
+  transmission: {},
   imagePath: 'Image TBD',
   dimensions: {
     weight: 1375, // In Kilograms
