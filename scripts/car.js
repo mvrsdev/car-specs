@@ -15,7 +15,7 @@ const userCar = {
   currentColor: 'Grey',
   engine:{},
   transmission:{},
-  imagePath:{},
+  imagePath: 'Image TBD',
   dimensions:{},
   safety:{},
   performance:{},
