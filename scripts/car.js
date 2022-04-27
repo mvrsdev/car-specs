@@ -7,7 +7,7 @@ const userCar = {
   availableColors: ['Green', 'Red', 'Silver', 'Black', 'Grey', 'Blue'],
   currentColor: 'Grey',
   engine: {
-    maxPower: 178, // In CV 
+    maxPower: 178, // In CV
     maxPowerAtRpm: 6500, // Maximum power target RPM
     maxTorque: 22.5, // Kgfm
     maxToqueAtRpm: 4500, // Maximum torque target RPM
@@ -25,6 +25,14 @@ const userCar = {
     length: 4358, // In millimeters
     betweenAxles: 2648, // In millimeters
   },
-  safety: {},
+  safety: {
+    abs: true, // Antilock Braking System
+    rpa: true, // Rear Park Assist
+    rvc: false, // Rear Vision Camera
+    acc: true, // Adaptive Cruise Control
+    esc: true, // Electronic Stability Control
+    aeb: false, // Autonomous Emergency Braking
+    esp: true, // Electronic Stability Program
+  },
   performance: {},
 };
