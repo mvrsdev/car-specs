@@ -138,17 +138,22 @@ const onix = {
 };
 
 function getComercialCarName(car) {
-  const cylinderTotalCapacity = car.engine.cylinderTotalCapacity/1000;
+  const cylinderTotalCapacity = car.engine.cylinderTotalCapacity / 1000;
   return `${car.brand} ${car.model} ${car.version} ${
-    car.year} ${cylinderTotalCapacity.toFixed(1)}`;
+    car.year
+  } ${cylinderTotalCapacity.toFixed(1)}`;
 }
 
 const carName = getComercialCarName(fordFocus);
 
 function getTotalValvesCount(car) {
-  return `${car.engine.cylinderCount * car.engine.cylinderValveCount}V`
-};
+  return `${car.engine.cylinderCount * car.engine.cylinderValveCount}V`;
+}
 
 const carValveCount = getTotalValvesCount(fordFocus);
 
-console.log(carValveCount);
+function getIndividualCylinderCapacity(car) {
+  return `${car.engine.cylinderTotalCapacity / car.engine.cylinderCount}`;
+}
+
+const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
