@@ -12,7 +12,7 @@ const fordFocus = {
     maxTorque: 22.5, // Kgfm
     maxToqueAtRpm: 4500, // Maximum torque target RPM
     cylinderCount: 4, // Total number of cylinders of the engine
-    cylinderValveCount: 2, // Number of valves to each cylinder
+    cylinderValveCount: 4, // Number of valves to each cylinder
     cylinderTotalCapacity: 1999, // Total cylinder capacity (in cm3)
     aspirationType: 'Natural', // Natural, Turbocharged, Supercharged
   },
@@ -145,3 +145,10 @@ function getComercialCarName(car) {
 
 const carName = getComercialCarName(fordFocus);
 
+function getTotalValvesCount(car) {
+  return `${car.engine.cylinderCount * car.engine.cylinderValveCount}V`
+};
+
+const carValveCount = getTotalValvesCount(fordFocus);
+
+console.log(carValveCount);
