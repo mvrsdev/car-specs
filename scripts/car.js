@@ -156,8 +156,7 @@ function getIndividualCylinderCapacity(car) {
 const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
 
 function getWeightPowerRatio(car) {
-  const carWeightPowerRatio = car.dimensions.weight / car.engine.maxPower;
-  return `${carWeightPowerRatio.toFixed(2)} kg/cv`;
+  return car.dimensions.weight / car.engine.maxPower;
 }
 const weightPowerRatio = getWeightPowerRatio(fordFocus);
 
