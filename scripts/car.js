@@ -151,7 +151,7 @@ function getTotalValvesCount(car) {
 const carValveCount = getTotalValvesCount(fordFocus);
 
 function getIndividualCylinderCapacity(car) {
-  return `${car.engine.cylinderTotalCapacity / car.engine.cylinderCount}`;
+  return car.engine.cylinderTotalCapacity / car.engine.cylinderCount;
 }
 const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
 
