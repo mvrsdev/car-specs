@@ -19,7 +19,6 @@ const fordFocus = {
   transmission: {
     type: 'AT', // AT = Automatic Transmission | MT = Manual Transmission
     cvt: false, // Continuously Variable Transmission or not
-  },
   gears: [
     { index: 1, ratio: 3.917 },
     { index: 2, ratio: 2.429 },
@@ -29,6 +28,7 @@ const fordFocus = {
     { index: 6, ratio: 0.702 },
     { index: 7, ratio: 3.507, reverse: true },
   ],
+  },
   imagePath: 'Image TBD',
   dimensions: {
     weight: 1375, // In Kilograms
