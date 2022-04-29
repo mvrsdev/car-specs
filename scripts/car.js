@@ -19,15 +19,15 @@ const fordFocus = {
   transmission: {
     type: 'AT', // AT = Automatic Transmission | MT = Manual Transmission
     cvt: false, // Continuously Variable Transmission or not
-  gears: [
-    { index: 1, ratio: 3.917 },
-    { index: 2, ratio: 2.429 },
-    { index: 3, ratio: 1.436 },
-    { index: 4, ratio: 1.021 },
-    { index: 5, ratio: 0.867 },
-    { index: 6, ratio: 0.702 },
-    { index: 7, ratio: 3.507, reverse: true },
-  ],
+    gears: [
+      { index: 1, ratio: 3.917 },
+      { index: 2, ratio: 2.429 },
+      { index: 3, ratio: 1.436 },
+      { index: 4, ratio: 1.021 },
+      { index: 5, ratio: 0.867 },
+      { index: 6, ratio: 0.702 },
+      { index: 7, ratio: 3.507, reverse: true },
+    ],
   },
   imagePath: 'Image TBD',
   dimensions: {
@@ -142,27 +142,29 @@ function getComercialCarName(car) {
   return `${car.brand} ${car.model} ${car.version} ${
     car.year
   } ${cylinderTotalCapacity.toFixed(1)}`;
-};
+}
 const carName = getComercialCarName(fordFocus);
 
 function getTotalValvesCount(car) {
   return `${car.engine.cylinderCount * car.engine.cylinderValveCount}V`;
-};
+}
 const carValveCount = getTotalValvesCount(fordFocus);
 
 function getIndividualCylinderCapacity(car) {
   return `${car.engine.cylinderTotalCapacity / car.engine.cylinderCount}`;
-};
+}
 const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
 
 function getWeightPowerRatio(car) {
   const carWeightPowerRatio = car.dimensions.weight / car.engine.maxPower;
   return `${carWeightPowerRatio.toFixed(2)} kg/cv`;
-};
+}
 const weightPowerRatio = getWeightPowerRatio(fordFocus);
 
-function getGearMaxTorque(car, indexGear) {
-  const gearTorqueCalc = car.gears[1].ratio / car.engine.maxTorque;
-  return gearTorqueCalc.toFixed(3);
-};
-const gearMaxTorque = getGearMaxTorque(fordFocus, fordFocus.gears[3].ratio);
+function getGearMaxTorque(car, index) {
+  const gearTorqueCalc =
+    car.engine.maxTorque * car.transmission.gears[index].ratio;
+  return `${car.transmission.gears[index].index} = 
+  ${gearTorqueCalc.toFixed(2)}`;
+}
+const gearMaxTorque = getGearMaxTorque(fordFocus, 1);
