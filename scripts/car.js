@@ -146,7 +146,7 @@ function getComercialCarName(car) {
 const carName = getComercialCarName(fordFocus);
 
 function getTotalValvesCount(car) {
-  return `${car.engine.cylinderCount * car.engine.cylinderValveCount}V`;
+  return car.engine.cylinderCount * car.engine.cylinderValveCount;
 }
 const carValveCount = getTotalValvesCount(fordFocus);
 
