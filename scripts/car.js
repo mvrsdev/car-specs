@@ -20,48 +20,48 @@ const fordFocus = {
     type: 'AT', // AT = Automatic Transmission | MT = Manual Transmission
     cvt: false, // Continuously Variable Transmission or not
   },
-    gears: [
-      { index: 1, ratio: 3.917 },
-      { index: 2, ratio: 2.429 },
-      { index: 3, ratio: 1.436 },
-      { index: 4, ratio: 1.021 },
-      { index: 5, ratio: 0.867 },
-      { index: 6, ratio: 0.702 },
-      { index: 7, ratio: 3.507, reverse: true },
-    ],
-    imagePath: 'Image TBD',
-    dimensions: {
-      weight: 1375, // In Kilograms
-      height: 1484, // In millimeters
-      width: 1823, // In millimeters
-      length: 4358, // In millimeters
-      betweenAxles: 2648, // In millimeters
-    },
-    safety: {
-      abs: true, // Antilock Braking System
-      rpa: true, // Rear Park Assist
-      rvc: false, // Rear Vision Camera
-      acc: true, // Adaptive Cruise Control
-      esc: true, // Electronic Stability Control
-      aeb: false, // Autonomous Emergency Braking
-      esp: true, // Electronic Stability Program
-    },
-    performance: {
-      maxSpeed: 206, // In kilometers
-      accelTo100: 9.2, // In seconds
-      averageFuelConsumption: [
-        {
-          urban: {
-            alcohol: 7.5,
-            gas: 8.5,
-          },
-          highway: {
-            alcohol: 9,
-            gas: 16,
-          },
+  gears: [
+    { index: 1, ratio: 3.917 },
+    { index: 2, ratio: 2.429 },
+    { index: 3, ratio: 1.436 },
+    { index: 4, ratio: 1.021 },
+    { index: 5, ratio: 0.867 },
+    { index: 6, ratio: 0.702 },
+    { index: 7, ratio: 3.507, reverse: true },
+  ],
+  imagePath: 'Image TBD',
+  dimensions: {
+    weight: 1375, // In Kilograms
+    height: 1484, // In millimeters
+    width: 1823, // In millimeters
+    length: 4358, // In millimeters
+    betweenAxles: 2648, // In millimeters
+  },
+  safety: {
+    abs: true, // Antilock Braking System
+    rpa: true, // Rear Park Assist
+    rvc: false, // Rear Vision Camera
+    acc: true, // Adaptive Cruise Control
+    esc: true, // Electronic Stability Control
+    aeb: false, // Autonomous Emergency Braking
+    esp: true, // Electronic Stability Program
+  },
+  performance: {
+    maxSpeed: 206, // In kilometers
+    accelTo100: 9.2, // In seconds
+    averageFuelConsumption: [
+      {
+        urban: {
+          alcohol: 7.5,
+          gas: 8.5,
         },
-      ], // km/l
-    },
+        highway: {
+          alcohol: 9,
+          gas: 16,
+        },
+      },
+    ], // km/l
+  },
 };
 
 const onix = {
@@ -143,26 +143,20 @@ function getComercialCarName(car) {
     car.year
   } ${cylinderTotalCapacity.toFixed(1)}`;
 }
-
 const carName = getComercialCarName(fordFocus);
 
 function getTotalValvesCount(car) {
   return `${car.engine.cylinderCount * car.engine.cylinderValveCount}V`;
 }
-
 const carValveCount = getTotalValvesCount(fordFocus);
 
 function getIndividualCylinderCapacity(car) {
   return `${car.engine.cylinderTotalCapacity / car.engine.cylinderCount}`;
 }
-
 const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
 
 function getWeightPowerRatio(car) {
   const carWeightPowerRatio = car.dimensions.weight / car.engine.maxPower;
   return `${carWeightPowerRatio.toFixed(2)} kg/cv`;
 }
-
 const weightPowerRatio = getWeightPowerRatio(fordFocus);
-
-console.log(weightPowerRatio);
