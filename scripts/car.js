@@ -140,7 +140,8 @@ const onix = {
 function getComercialCarName(car) {
   const cylinderTotalCapacity = car.engine.cylinderTotalCapacity / 1000;
   return `${car.brand} ${car.model} ${car.version} ${
-    car.year} ${cylinderTotalCapacity.toFixed(1)}`;
+    car.year
+  } ${cylinderTotalCapacity.toFixed(1)}`;
 };
 const carName = getComercialCarName(fordFocus);
 
@@ -157,5 +158,11 @@ const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
 function getWeightPowerRatio(car) {
   const carWeightPowerRatio = car.dimensions.weight / car.engine.maxPower;
   return `${carWeightPowerRatio.toFixed(2)} kg/cv`;
-}
+};
 const weightPowerRatio = getWeightPowerRatio(fordFocus);
+
+function getGearMaxTorque(car, indexGear) {
+  const gearTorqueCalc = car.gears[1].ratio / car.engine.maxTorque;
+  return gearTorqueCalc.toFixed(3);
+};
+const gearMaxTorque = getGearMaxTorque(fordFocus, fordFocus.gears[3].ratio);
