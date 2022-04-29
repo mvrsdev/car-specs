@@ -162,9 +162,6 @@ function getWeightPowerRatio(car) {
 const weightPowerRatio = getWeightPowerRatio(fordFocus);
 
 function getGearMaxTorque(car, index) {
-  const gearTorqueCalc =
-    car.engine.maxTorque * car.transmission.gears[index].ratio;
-  return `${car.transmission.gears[index].index} = 
-  ${gearTorqueCalc.toFixed(2)}`;
+  return car.engine.maxTorque * car.transmission.gears[index].ratio;
 }
 const gearMaxTorque = getGearMaxTorque(fordFocus, 1);
