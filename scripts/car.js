@@ -12,7 +12,7 @@ const fordFocus = {
     maxTorque: 22.5, // Kgfm
     maxToqueAtRpm: 4500, // Maximum torque target RPM
     cylinderCount: 4, // Total number of cylinders of the engine
-    cylinderValveCount: 2, // Number of valves to each cylinder
+    cylinderValveCount: 4, // Number of valves to each cylinder
     cylinderTotalCapacity: 1999, // Total cylinder capacity (in cm3)
     aspirationType: 'Natural', // Natural, Turbocharged, Supercharged
   },
@@ -28,39 +28,39 @@ const fordFocus = {
       { index: 6, ratio: 0.702 },
       { index: 7, ratio: 3.507, reverse: true },
     ],
-    imagePath: 'Image TBD',
-    dimensions: {
-      weight: 1375, // In Kilograms
-      height: 1484, // In millimeters
-      width: 1823, // In millimeters
-      length: 4358, // In millimeters
-      betweenAxles: 2648, // In millimeters
-    },
-    safety: {
-      abs: true, // Antilock Braking System
-      rpa: true, // Rear Park Assist
-      rvc: false, // Rear Vision Camera
-      acc: true, // Adaptive Cruise Control
-      esc: true, // Electronic Stability Control
-      aeb: false, // Autonomous Emergency Braking
-      esp: true, // Electronic Stability Program
-    },
-    performance: {
-      maxSpeed: 206, // In kilometers
-      accelTo100: 9.2, // In seconds
-      averageFuelConsumption: [
-        {
-          urban: {
-            alcohol: 7.5,
-            gas: 8.5,
-          },
-          highway: {
-            alcohol: 9,
-            gas: 16,
-          },
+  },
+  imagePath: 'Image TBD',
+  dimensions: {
+    weight: 1375, // In Kilograms
+    height: 1484, // In millimeters
+    width: 1823, // In millimeters
+    length: 4358, // In millimeters
+    betweenAxles: 2648, // In millimeters
+  },
+  safety: {
+    abs: true, // Antilock Braking System
+    rpa: true, // Rear Park Assist
+    rvc: false, // Rear Vision Camera
+    acc: true, // Adaptive Cruise Control
+    esc: true, // Electronic Stability Control
+    aeb: false, // Autonomous Emergency Braking
+    esp: true, // Electronic Stability Program
+  },
+  performance: {
+    maxSpeed: 206, // In kilometers
+    accelTo100: 9.2, // In seconds
+    averageFuelConsumption: [
+      {
+        urban: {
+          alcohol: 7.5,
+          gas: 8.5,
         },
-      ], // km/l
-    },
+        highway: {
+          alcohol: 9,
+          gas: 16,
+        },
+      },
+    ], // km/l
   },
 };
 
@@ -138,10 +138,29 @@ const onix = {
 };
 
 function getComercialCarName(car) {
-  const cylinderTotalCapacity = car.engine.cylinderTotalCapacity/1000;
+  const cylinderTotalCapacity = car.engine.cylinderTotalCapacity / 1000;
   return `${car.brand} ${car.model} ${car.version} ${
-    car.year} ${cylinderTotalCapacity.toFixed(1)}`;
+    car.year
+  } ${cylinderTotalCapacity.toFixed(1)}`;
 }
-
 const carName = getComercialCarName(fordFocus);
 
+function getTotalValvesCount(car) {
+  return car.engine.cylinderCount * car.engine.cylinderValveCount;
+}
+const carValveCount = getTotalValvesCount(fordFocus);
+
+function getIndividualCylinderCapacity(car) {
+  return car.engine.cylinderTotalCapacity / car.engine.cylinderCount;
+}
+const individualCylinderCapacity = getIndividualCylinderCapacity(fordFocus);
+
+function getWeightPowerRatio(car) {
+  return car.dimensions.weight / car.engine.maxPower;
+}
+const weightPowerRatio = getWeightPowerRatio(fordFocus);
+
+function getGearMaxTorque(car, index) {
+  return car.engine.maxTorque * car.transmission.gears[index].ratio;
+}
+const gearMaxTorque = getGearMaxTorque(fordFocus, 1);
