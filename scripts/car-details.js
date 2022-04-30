@@ -6,6 +6,7 @@ window.onload = async () => {
   currentCar = await getCarById(getCarId(1));
 
   document.getElementById('car-info').textContent = JSON.stringify(currentCar);
+  document.getElementById('car-image').setAttribute('src', currentCar.imagePath);
 };
 
 const getCarId = () => {

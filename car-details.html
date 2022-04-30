@@ -4,10 +4,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #car-image {
+      max-height: 256px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+    #car-info {
+      display: block;
+      padding: 16px;
+      word-wrap: normal;
+      border: solid 1px black;
+      background: #ededed;
+    }
+  </style>
   <title>Car Details</title>
 </head>
 <body>
   <h1>Car Details</h1>
+  <img id="car-image" />
   <code id="car-info"></code>
 
   <script type="module" src="./scripts/car-details.js"></script>

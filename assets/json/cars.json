@@ -53,7 +53,7 @@
         }
       ]
     },
-    "imagePath": "Image TBD",
+    "imagePath": "assets/images/focus-se-plus.jpeg",
     "dimensions": {
       "weight": 1375,
       "height": 1484,
@@ -94,7 +94,7 @@
     "version": "LT",
     "year": 2018,
     "bodyType": "hatchback",
-    "imagePath": "img/onix-lt.jpeg",
+    "imagePath": "assets/images/onix-lt.jpeg",
     "availableColors": [
       "Imperial blue",
       "Summit White",
